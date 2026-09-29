@@ -11,28 +11,28 @@ type InputVariant = 'default' | 'filled' | 'borderless';
 type InputSize = 'sm' | 'md' | 'lg';
 
 const inputVariants = cva(
-  'w-full transition-all !border-0 !border-b !font-sans !text-on-surface !rounded-none placeholder:!text-on-surface-variant/60 !mt-1',
+  'w-full transition-colors font-sans text-zinc-900 rounded-xl border placeholder:text-zinc-400 focus:outline-none focus:ring-1 shadow-2xs',
   {
     variants: {
       variant: {
         default:
-          '!bg-surface-container-low !border-outline-variant hover:!border-outline focus:!border-primary focus:!shadow-none',
+          'bg-white border-stone-200 hover:border-stone-300 focus:border-zinc-950 focus:ring-zinc-950 text-zinc-900',
         filled:
-          '!bg-surface-container !border-outline-variant focus:!bg-surface-container-low focus:!border-primary',
-        borderless: '!border-transparent !bg-transparent !shadow-none',
+          'bg-stone-50 border-stone-200/80 hover:border-stone-300 focus:bg-white focus:border-zinc-950 focus:ring-zinc-950 text-zinc-900',
+        borderless: '!border-transparent !bg-transparent !shadow-none focus:ring-0',
       },
       size: {
-        sm: '!min-h-9 !text-xs px-3',
-        md: '!min-h-11 !text-sm px-4',
-        lg: '!min-h-13 !text-base px-5',
+        sm: '!min-h-8.5 !text-xs !px-3 !py-1.5 !rounded-lg',
+        md: '!min-h-10.5 !text-sm !px-3.5 !py-2 !rounded-xl',
+        lg: '!min-h-12.5 !text-base !px-4 !py-2.5 !rounded-xl',
       },
       status: {
-        error: '!border-error hover:!border-error focus:!border-error !text-error',
-        warning: '!border-primary hover:!border-primary',
-        success: '!border-secondary focus:!border-secondary',
+        error: '!border-rose-500 focus:!border-rose-600 focus:!ring-rose-500 !text-rose-900',
+        warning: '!border-amber-500 focus:!border-amber-600 focus:!ring-amber-500',
+        success: '!border-emerald-500 focus:!border-emerald-600 focus:!ring-emerald-500',
       },
       disabled: {
-        true: '!opacity-50 !cursor-not-allowed !bg-surface-container',
+        true: '!opacity-50 !cursor-not-allowed !bg-stone-100',
       },
     },
     defaultVariants: {

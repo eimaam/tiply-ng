@@ -19,4 +19,5 @@ export * from './src/components/ui/Drawer';
 export * from './src/lib/utils';
 export * from './src/utils/format';
 export * from './src/utils/export';
+export * from './src/components/ui/VerifiedBadge';
 export * from "./src/types";

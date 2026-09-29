@@ -9,30 +9,30 @@ import { cn } from '../../lib/utils';
 const MotionAntButton = (motion as any).create(AntButton) as any;
 
 const buttonStyles = cva(
-  'bg-transparent! font-sans! shadow-none! flex! items-center! rounded-none! justify-center! gap-2! font-semibold! transition-all duration-400 focus:!outline-none focus:!ring-1 focus:!ring-primary/20 focus-visible:!outline-none disabled:pointer-events-none disabled:!cursor-not-allowed disabled:opacity-50',
+  'font-sans flex items-center rounded-xl justify-center gap-2 font-semibold transition-all duration-200 focus:outline-none focus:ring-1 focus:ring-zinc-950 focus-visible:outline-none disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 cursor-pointer',
   {
     variants: {
       variant: {
         default:
-          'bg-primary! text-on-primary! border-0! hover:bg-primary-container! hover:!text-on-primary-container! active:translate-y-0!',
-        destructive: '!bg-error !text-on-error !border-0 hover:!bg-error/90',
+          '!bg-zinc-950 !text-white hover:!bg-zinc-800 active:!scale-[0.99] !border-0 !shadow-2xs',
+        destructive: '!bg-rose-600 !text-white hover:!bg-rose-700 !border-0 !shadow-2xs',
         outline:
-          'border! border-primary! bg-transparent! text-primary! hover:bg-surface-container-low! hover:!border-outline',
+          '!border !border-stone-200 !bg-white !text-zinc-900 hover:!bg-stone-50 hover:!border-stone-300 !shadow-2xs',
         secondary:
-          'bg-surface-container! text-on-surface! hover:bg-surface-container-high! border! border-outline-variant',
+          '!bg-stone-100 !text-zinc-900 hover:!bg-stone-200/70 !border !border-stone-200',
         tertiary:
-          'bg-tertiary-container! text-on-tertiary-container! hover:brightness-95! border-0',
+          '!bg-emerald-50 !text-emerald-900 hover:!bg-emerald-100/70 !border !border-emerald-200/60',
         ghost:
-          'border! border-transparent! shadow-none! hover:bg-surface-container-low! hover:border-outline-variant! text-on-surface-variant',
-        link: 'text-primary! border-0! shadow-none! underline-offset-4! hover:underline! bg-transparent',
-        filled: 'bg-surface! text-on-surface! hover:bg-surface-container! border-0',
+          '!border-0 !bg-transparent hover:!bg-stone-100 !text-zinc-700 hover:!text-zinc-950 !shadow-none',
+        link: '!text-emerald-700 hover:!text-emerald-800 !underline-offset-4 hover:!underline !bg-transparent !p-0 !border-0 !shadow-none',
+        filled: '!bg-zinc-900 !text-white hover:!bg-zinc-800 !border-0',
       },
       size: {
-        default: '!min-h-10 !px-5 !py-2 !text-sm !tracking-[0.02em]',
-        sm: '!h-8 !px-4 !text-xs',
-        md: '!h-9 !px-5 md:h-12! md:px-8! text-sm! md:!text-base',
-        lg: '!h-12 !px-8 md:!h-14 md:!px-10 !text-sm md:!text-base',
-        icon: '!h-10 !w-10',
+        default: '!min-h-10 !px-4 !py-2 !text-xs sm:!text-sm',
+        sm: '!min-h-8.5 !px-3 !py-1.5 !text-xs !rounded-lg',
+        md: '!min-h-10.5 !px-4 !py-2 !text-sm !rounded-xl',
+        lg: '!min-h-12 !px-6 !py-2.5 !text-sm sm:!text-base !rounded-xl',
+        icon: '!h-10 !w-10 !p-0 !rounded-xl',
       },
       fullWidth: {
         true: 'w-full',

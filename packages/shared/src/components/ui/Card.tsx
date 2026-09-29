@@ -13,26 +13,26 @@ type CardPadding = 'none' | 'sm' | 'md' | 'lg' | 'xl';
 type CardShadow = 'none' | 'sm' | 'md' | 'lg' | 'xl';
 type CardBorder = 'none' | 'solid' | 'dashed' | 'dotted';
 
-const cardVariants = cva('overflow-hidden transition-all duration-300', {
+const cardVariants = cva('overflow-hidden transition-all duration-300 [&_.ant-card-body]:!p-0', {
   variants: {
     variant: {
-      default: '!bg-surface-container-lowest !border !border-outline-variant hover:!border-outline hover:!shadow-ambient',
-      outlined: '!bg-surface-container-lowest !border !border-outline-variant',
-      elevated: '!bg-surface-container-lowest !border !border-outline-variant !shadow-card hover:!shadow-ambient',
+      default: '!bg-white !border !border-stone-200/90 !shadow-2xs hover:!border-stone-300',
+      outlined: '!bg-white !border !border-stone-200',
+      elevated: '!bg-white !border !border-stone-200 !shadow-md',
     },
     rounded: {
       none: '!rounded-none',
-      sm: '!rounded-sm',
-      md: '!rounded-md',
-      lg: '!rounded-lg',
-      xl: '!rounded-xl',
+      sm: '!rounded-lg',
+      md: '!rounded-xl',
+      lg: '!rounded-2xl',
+      xl: '!rounded-3xl',
     },
     padding: {
       none: '!p-0',
-      sm: '!p-3',
-      md: '!p-5',
-      lg: '!p-6',
-      xl: '!p-8',
+      sm: '!p-3 sm:!p-4',
+      md: '!p-4 sm:!p-6',
+      lg: '!p-6 sm:!p-8',
+      xl: '!p-8 sm:!p-10',
     },
     border: {
       none: '!border-none',
@@ -42,10 +42,10 @@ const cardVariants = cva('overflow-hidden transition-all duration-300', {
     },
     shadow: {
       none: '!shadow-none',
-      sm: '!shadow-sm',
-      md: '!shadow-md',
-      lg: '!shadow-ambient',
-      xl: '!shadow-ambient',
+      sm: '!shadow-2xs',
+      md: '!shadow-xs',
+      lg: '!shadow-md',
+      xl: '!shadow-xl',
     },
   },
   defaultVariants: {
@@ -108,11 +108,11 @@ export const Card = ({
       {...props}
     >
       {
-        (title && !extra) ? <h3 className="text-xl md:text-2xl mb-4 font-serif font-medium tracking-tight text-on-surface">
+        (title && !extra) ? <h3 className="text-lg md:text-xl mb-4 font-sans font-bold tracking-tight text-zinc-950">
         {title}
       </h3>:
       <div className="flex items-center justify-between mb-4">
-        <h3 className="text-xl md:text-2xl font-serif font-medium tracking-tight text-on-surface">
+        <h3 className="text-lg md:text-xl font-sans font-bold tracking-tight text-zinc-950">
         {title}
       </h3>
         {extra}

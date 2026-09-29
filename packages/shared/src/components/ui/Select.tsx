@@ -7,34 +7,37 @@ import { cn } from '../../lib/utils';
 type SelectVariant = 'default' | 'filled' | 'borderless';
 type SelectSize = 'sm' | 'md' | 'lg';
 
-const selectVariants = cva('w-full transition-all !border-0 !border-b !font-sans !text-on-surface !rounded-none !mt-1', {
-  variants: {
-    variant: {
-      default:
-        '!bg-surface-container-low !border-outline-variant hover:!border-outline focus:!border-primary',
-      filled:
-        '!bg-surface-container !border-outline-variant focus:!bg-surface-container-low focus:!border-primary',
-      borderless: '!border-transparent !bg-transparent hover:!border-transparent !shadow-none',
+const selectVariants = cva(
+  'w-full transition-colors font-sans text-zinc-900 rounded-xl [&_.ant-select-selector]:!rounded-xl [&_.ant-select-selector]:!border [&_.ant-select-selector]:!shadow-2xs',
+  {
+    variants: {
+      variant: {
+        default:
+          '[&_.ant-select-selector]:!bg-white [&_.ant-select-selector]:!border-stone-200 hover:[&_.ant-select-selector]:!border-stone-300 focus-within:[&_.ant-select-selector]:!border-zinc-950 focus-within:[&_.ant-select-selector]:!ring-1 focus-within:[&_.ant-select-selector]:!ring-zinc-950',
+        filled:
+          '[&_.ant-select-selector]:!bg-stone-50 [&_.ant-select-selector]:!border-stone-200/80 hover:[&_.ant-select-selector]:!border-stone-300 focus-within:[&_.ant-select-selector]:!bg-white focus-within:[&_.ant-select-selector]:!border-zinc-950',
+        borderless: '[&_.ant-select-selector]:!border-transparent [&_.ant-select-selector]:!bg-transparent !shadow-none',
+      },
+      size: {
+        sm: '!h-8.5 !text-xs [&_.ant-select-selector]:!min-h-8.5 [&_.ant-select-selector]:!px-2.5',
+        md: '!h-10.5 !text-sm [&_.ant-select-selector]:!min-h-10.5 [&_.ant-select-selector]:!px-3',
+        lg: '!h-12.5 !text-base [&_.ant-select-selector]:!min-h-12.5 [&_.ant-select-selector]:!px-4',
+      },
+      status: {
+        error: '[&_.ant-select-selector]:!border-rose-500 hover:[&_.ant-select-selector]:!border-rose-600',
+        warning: '[&_.ant-select-selector]:!border-amber-500 hover:[&_.ant-select-selector]:!border-amber-600',
+        success: '[&_.ant-select-selector]:!border-emerald-500 hover:[&_.ant-select-selector]:!border-emerald-600',
+      },
+      disabled: {
+        true: '!opacity-50 !cursor-not-allowed [&_.ant-select-selector]:!bg-stone-100',
+      },
     },
-    size: {
-      sm: '!h-9 !text-xs',
-      md: '!h-11 md:!text-sm',
-      lg: '!h-13 !text-base',
+    defaultVariants: {
+      variant: 'default',
+      size: 'md',
     },
-    status: {
-      error: '!border-error hover:!border-error focus:!border-error',
-      warning: '!border-primary hover:!border-primary',
-      success: '!border-secondary hover:!border-secondary',
-    },
-    disabled: {
-      true: '!opacity-50 !cursor-not-allowed !bg-surface-container',
-    },
-  },
-  defaultVariants: {
-    variant: 'default',
-    size: 'md',
-  },
-});
+  }
+);
 
 interface BaseSelectProps {
   variant?: SelectVariant;

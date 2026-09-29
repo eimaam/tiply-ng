@@ -36,6 +36,7 @@ export interface CreatorProfile {
   bio: string;
   avatarUrl: string;
   email: string;
+  isVerified?: boolean;
   isAcceptingTips: boolean;
   showTotalReceived: boolean;
   showSupporterMessages: boolean;

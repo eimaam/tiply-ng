@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none">
+  <defs>
+    <linearGradient id="tiply-mark-emerald" x1="24.5" y1="27.5" x2="54.5" y2="7.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#059669" />
+      <stop offset="100%" stop-color="#10B981" />
+    </linearGradient>
+  </defs>
+  <!-- Emerald Kinetic Swoop (Layer 1 - Underneath Stem) -->
+  <path d="M 24.5 27.5 C 32 27.5 39.5 22.5 46 16" stroke="url(#tiply-mark-emerald)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" />
+  <!-- Nigerian Emerald Domain Beacon -->
+  <circle cx="54.5" cy="7.5" r="4.5" fill="#10B981" />
+  <!-- Obsidian Stem & Hook (Layer 2 - Over Swoop) -->
+  <path d="M 24.5 12 V 38 C 24.5 44.5 29.5 48.5 38 48.5" stroke="#09090B" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" />
+  <!-- Obsidian Left Crossbar -->
+  <path d="M 11 27.5 H 24.5" stroke="#09090B" stroke-width="9" stroke-linecap="round" />
+</svg>

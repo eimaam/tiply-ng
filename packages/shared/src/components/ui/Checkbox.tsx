@@ -5,7 +5,7 @@ import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '../../lib/utils';
 
 const checkboxVariants = cva(
-  '[&_.ant-checkbox-inner]:!border-outline-variant [&_.ant-checkbox-checked_.ant-checkbox-inner]:!bg-primary [&_.ant-checkbox-checked_.ant-checkbox-inner]:!border-primary [&_.ant-checkbox-inner]:!rounded-sm [&_.ant-checkbox-checked_.ant-checkbox-inner:after]:!border-on-primary',
+  '[&_.ant-checkbox-inner]:!border-stone-300 [&_.ant-checkbox-inner]:!rounded-md [&_.ant-checkbox-checked_.ant-checkbox-inner]:!bg-emerald-600 [&_.ant-checkbox-checked_.ant-checkbox-inner]:!border-emerald-600 [&_.ant-checkbox-checked_.ant-checkbox-inner:after]:!border-white [&_.ant-checkbox-inner]:!transition-colors',
   {
     variants: {
       tone: {

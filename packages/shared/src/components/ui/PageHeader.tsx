@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 import { cn } from '../../lib/utils';
 
 interface PageHeaderProps {
-  title: string;
+  title: string | ReactNode;
   description?: string;
   extra?: ReactNode;
   className?: string;
@@ -15,13 +15,15 @@ export const PageHeader = ({
   className,
 }: PageHeaderProps) => {
   return (
-    <div className={cn('mb-12 flex flex-col gap-6 md:flex-row md:items-end md:justify-between', className)}>
+      
+    
+    <div className={cn('flex flex-col sm:flex-row sm:items-center justify-between gap-4', className)}>
       <div className="space-y-2 max-w-3xl">
-        <h1 className="type-headline-lg text-on-surface tracking-tight">
+            <h1 className="text-2xl md:text-3xl font-bold text-zinc-950">
           {title}
         </h1>
         {description && (
-          <p className="type-body-md text-on-surface-variant leading-relaxed">
+          <p className="text-xs md:text-sm text-zinc-500 leading-relaxed">
             {description}
           </p>
         )}
