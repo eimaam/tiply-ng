@@ -1,0 +1,110 @@
+@import 'tailwindcss';
+
+@source "../../../packages/shared/src";
+
+@theme {
+  /* Crisp Modern Light Palette — Linear × Nigerian Internet */
+  --color-canvas: #ffffff;
+  --color-canvas-muted: #fafaf9;
+  --color-canvas-subtle: #f4f4f5;
+
+  --color-border-subtle: #f0eee9;
+  --color-border: #e7e5e4;
+  --color-border-strong: #d4d4d8;
+
+  --color-text-primary: #09090b;
+  --color-text-secondary: #52525b;
+  --color-text-muted: #71717a;
+  --color-text-faint: #a1a1aa;
+
+  /* Brand Nigerian Internet Green */
+  --color-brand: #059669;
+  --color-brand-hover: #047857;
+  --color-brand-subtle: #ecfdf5;
+  --color-brand-border: #a7f3d0;
+
+  /* Dark Obsidian Button / High Contrast Action */
+  --color-action-bg: #09090b;
+  --color-action-text: #ffffff;
+  --color-action-hover: #27272a;
+
+  /* Status Colors */
+  --color-success: #10b981;
+  --color-success-subtle: #ecfdf5;
+  --color-warning: #f59e0b;
+  --color-warning-subtle: #fffbeb;
+  --color-error: #ef4444;
+  --color-error-subtle: #fef2f2;
+
+  /* Typography */
+  --font-sans: 'Funnel Display', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-bhai: 'Bai Jamjuree', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Radii */
+  --radius-xs: 0.25rem;
+  --radius-sm: 0.375rem;
+  --radius: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.25rem;
+  --radius-full: 9999px;
+}
+
+/* Custom base resets and utilities */
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+  background-color: #fafaf9;
+  color: #09090b;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background-color: #fafaf9;
+  color: #09090b;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d4d4d8;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a1a1aa;
+}
+
+/* Number input spinner hide */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* Subtly animated dot background */
+.bg-grid-subtle {
+  background-size: 24px 24px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+}
+
+.bg-dots-subtle {
+  background-size: 20px 20px;
+  background-image: radial-gradient(rgba(0, 0, 0, 0.06) 1px, transparent 1px);
+}
